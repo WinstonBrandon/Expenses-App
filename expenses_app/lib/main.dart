@@ -21,8 +21,11 @@ class MyAppHomepage extends StatelessWidget {
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Card(
+            color: Colors.purple[100],
             child: Text('CHART'),
           ),
           Card(
