@@ -39,7 +39,6 @@ class MyAppHomepage extends StatelessWidget {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Card(
             color: Colors.purple[100],
@@ -48,14 +47,26 @@ class MyAppHomepage extends StatelessWidget {
             ),
           ),
           Column(
+            children: [
+              TextField(
+                decoration: InputDecoration(labelText: 'Title'),
+              ),
+              TextField(
+                decoration: InputDecoration(labelText: 'Amount'),
+              ),
+            ],
+          ),
+          Column(
             children: transactions.map((tx) {
               return Card(
                 child: Row(
                   children: [
                     Container(
                       margin: EdgeInsets.all(10),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 10,
+                      ),
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: Colors.purple,
