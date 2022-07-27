@@ -47,6 +47,7 @@ class MyAppHomepage extends StatelessWidget {
             ),
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               TextField(
                 decoration: InputDecoration(labelText: 'Title'),
@@ -54,6 +55,12 @@ class MyAppHomepage extends StatelessWidget {
               TextField(
                 decoration: InputDecoration(labelText: 'Amount'),
               ),
+              FlatButton(
+                  child: Text(
+                    'Add Transaction',
+                    style: TextStyle(color: Colors.purple),
+                  ),
+                  onPressed: () {}),
             ],
           ),
           Column(
