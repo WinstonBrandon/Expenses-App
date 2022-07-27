@@ -41,7 +41,7 @@ class MyAppHomepage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Card(
-            color: Colors.purple[100],
+            color: Colors.purple,
             child: Text('CHART'),
           ),
           Column(
