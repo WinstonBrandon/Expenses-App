@@ -42,12 +42,56 @@ class MyAppHomepage extends StatelessWidget {
         children: [
           Card(
             color: Colors.purple[100],
-            child: Text('CHART'),
+            child: Text(
+              'CHART',
+            ),
           ),
           Column(
             children: transactions.map((tx) {
               return Card(
-                child: Text(tx.amount.toString()),
+                child: Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.purple,
+                        ),
+                      ),
+                      child: Text(
+                        tx.amount.toString(),
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Card(
+                          child: Text(
+                            tx.title,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Card(
+                          child: Text(
+                            tx.date.toString(),
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               );
             }).toList(),
           )
