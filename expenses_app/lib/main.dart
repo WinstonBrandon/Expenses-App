@@ -44,9 +44,13 @@ class MyAppHomepage extends StatelessWidget {
             color: Colors.purple[100],
             child: Text('CHART'),
           ),
-          Card(
-            child: Text('LIST OF TX'),
-          ),
+          Column(
+            children: transactions.map((tx) {
+              return Card(
+                child: Text(tx.amount.toString()),
+              );
+            }).toList(),
+          )
         ],
       ),
     );
