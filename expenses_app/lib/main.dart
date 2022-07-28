@@ -13,6 +13,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
+final titleController = TextEditingController();
+final amountController = TextEditingController();
+
 class MyAppHomepage extends StatelessWidget {
   List<Transaction> transactions = [
     Transaction(
@@ -50,17 +53,18 @@ class MyAppHomepage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               TextField(
-                decoration: InputDecoration(labelText: 'Title'),
+                decoration: InputDecoration(labelText: 'Title'),controller: titleController,
               ),
               TextField(
-                decoration: InputDecoration(labelText: 'Amount'),
+                decoration: InputDecoration(labelText: 'Amount'),controller: amountController,
               ),
               FlatButton(
                   child: Text(
                     'Add Transaction',
                     style: TextStyle(color: Colors.purple),
                   ),
-                  onPressed: () {}),
+                  onPressed: () {print(titleController.text);
+                  print(amountController.text);}),
             ],
           ),
           Column(
