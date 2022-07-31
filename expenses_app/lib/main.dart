@@ -24,17 +24,19 @@ class MyAppHomepage extends StatelessWidget {
           'My Expenses App',
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Card(
-            color: Colors.purple[100],
-            child: Text(
-              'CHART',
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Card(
+              color: Colors.purple[100],
+              child: Text(
+                'CHART',
+              ),
             ),
-          ),
-          TransactionInputState(),
-        ],
+            TransactionInputState(),
+          ],
+        ),
       ),
     );
   }
